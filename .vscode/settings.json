@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "Biovana",
+    "Fruchtgummis",
+    "GUMMIES",
+    "hyaluronic",
+    "ketogen",
+    "Kollagen",
+    "parabens"
+  ]
+}

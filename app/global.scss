@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: var(--main-text-color);
+  line-height: 1.5;
+  margin: 10px;
+  background-color: rgb(12, 9, 39);
+}
