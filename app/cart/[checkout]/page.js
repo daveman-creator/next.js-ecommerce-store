@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function CheckOutPage() {
   return (
     <div>
@@ -67,7 +69,9 @@ export default function CheckOutPage() {
           />{' '}
           Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" className="btn" />
+        <Link href="/cart/checkout/thankyou">
+          <input type="submit" value="Continue to checkout" className="btn" />
+        </Link>
       </form>
     </div>
   );

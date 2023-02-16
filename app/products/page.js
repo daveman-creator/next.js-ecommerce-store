@@ -58,12 +58,21 @@ export default async function ProductsPage() {
       <main className={styles.main}>
         {products.map((product) => {
           return (
-            <div className={styles.productDiv} key={product.id}>
-              <Link className={styles.link} href={`/products/${product.id}`}>
+            <div
+              className={styles.productDiv}
+              key={product.id}
+              data-test-id="product-<product id>"
+            >
+              <Link
+                className={styles.link}
+                href={`/products/${product.id}`}
+                data-test-id="products-link"
+              >
                 <h2>{product.name}</h2>
               </Link>
               <Link className={styles.link2} href={`/products/${product.id}`}>
                 <Image
+                  data-test-id="product-image"
                   className={styles.img}
                   src={`/images/${product.name}-${product.id}.webp`}
                   alt={product.type}
@@ -72,7 +81,10 @@ export default async function ProductsPage() {
                 />
                 <h2>{product.description}</h2>
               </Link>
-              <Link href={`/products/${product.id}`}>
+              <Link
+                href={`/products/${product.id}`}
+                data-test-id="products-link"
+              >
                 <button>£{product.price}</button>
               </Link>
             </div>

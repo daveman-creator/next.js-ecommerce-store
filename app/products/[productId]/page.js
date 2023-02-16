@@ -9,6 +9,18 @@ import Product from './product';
 
 export const dynamic = 'force-dynamic';
 
+export async function generateMetadata(props) {
+  const singleProduct = await getProduct(props.params.productId);
+  return {
+    title: `Single product page for ${singleProduct.name}
+    `,
+    description: '',
+    icons: {
+      shortcut: '/favicon.ico',
+    },
+  };
+}
+
 export default async function ProductPage(props) {
   // const singleProduct = products.find((product) => {
   //   return product.name.toLocaleLowerCase() === props.params.productName;

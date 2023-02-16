@@ -1,9 +1,40 @@
 import './global.scss';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
+import { getProducts } from '../database/products';
 import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const products = await getProducts();
+  const productsCookie = cookies().get('productsCookie');
+
+  let productsCookieParsed = [];
+
+  if (productsCookie) {
+    productsCookieParsed = JSON.parse(productsCookie.value);
+  }
+
+  // console.log('products', products);
+  const productsWithCart = products.map((product) => {
+    const productWithCart = { ...product, cart: 0 };
+
+    const productInCookie = productsCookieParsed.find(
+      (productObject) => product.id === productObject.id,
+    );
+
+    if (productInCookie) {
+      productWithCart.cart = productInCookie.cart;
+      // console.log(productWithCart.cart);
+    }
+    return productWithCart;
+  });
+
+  let subTotal = 0;
+  productsWithCart.forEach((product) => {
+    subTotal += product.cart;
+  });
+
   return (
     <html lang="en">
       {/*
@@ -34,7 +65,7 @@ export default function RootLayout({ children }) {
               </li>
               <li className={styles.navlink}>
                 {' '}
-                <Link href="/cart"> cart</Link>
+                <Link href="/cart"> cart ({subTotal})</Link>
               </li>
             </ul>
           </nav>

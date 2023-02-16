@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
+import Remove from './Remove';
 
 export default async function Cart() {
   const productsCookie = cookies().get('productsCookie');
@@ -64,6 +65,7 @@ export default async function Cart() {
       <Link href={`/cart/${Cart.id}`}>
         <button className={styles.button}>Check Out </button>
       </Link>
+      <Remove {...products.id} />
     </div>
   );
 }

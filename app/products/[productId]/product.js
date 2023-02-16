@@ -3,6 +3,7 @@
 // import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 // import Link from 'next/link';
 import { useState } from 'react';
 // import { products } from '../../../database/products';
@@ -17,6 +18,7 @@ import styles from './product.module.scss';
 export default function Product(props) {
   // const singleProduct = await getProduct(props.params.productName);
   const [count, setCount] = useState(1);
+  const router = useRouter();
   return (
     <main className={styles.main}>
       <Image
@@ -91,6 +93,8 @@ export default function Product(props) {
 
                 setStringifiedCookie('productsCookie', productsInCookies);
                 setCount(1);
+
+                router.refresh();
               }}
             >
               Add to Cart
