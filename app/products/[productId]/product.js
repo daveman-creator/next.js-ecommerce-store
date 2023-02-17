@@ -65,6 +65,7 @@ export default function Product(props) {
           <br />
           <Link href={`/cart`}>
             <button
+              data-test-id="product-add-to-cart"
               className={styles.button2}
               onClick={() => {
                 const productsInCookies = getParsedCookie('productsCookie');
@@ -97,7 +98,7 @@ export default function Product(props) {
                 router.refresh();
               }}
             >
-              Add to Cart
+              Add To Cart
             </button>
           </Link>
         </div>

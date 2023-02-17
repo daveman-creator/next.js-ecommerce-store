@@ -49,6 +49,7 @@ export default async function Cart() {
                 {product.name}
                 {/* ({product.cart}) */}
               </h2>
+
               <Image
                 className={styles.img}
                 src={`/images/${product.name}-${product.id}.webp`}
@@ -57,15 +58,28 @@ export default async function Cart() {
                 height="100"
               />
               <p className={styles.p}>£{product.price}</p>
-              <p className={styles.p}> quantity: {product.cart}</p>
+              <p
+                className={styles.p}
+                data-test-id="cart-product-quantity-<product id>"
+              >
+                {' '}
+                quantity: {product.cart}
+              </p>
+              <Remove
+                product={product}
+                productsCookieParsed={productsCookieParsed}
+              />
             </div>
           );
         })}
-      <p className={styles.p}>Total: £{subTotal}</p>
+      <p className={styles.p} data-test-id="cart-total">
+        Total: £{subTotal}
+      </p>
       <Link href={`/cart/${Cart.id}`}>
-        <button className={styles.button}>Check Out </button>
+        <button className={styles.button} data-test-id="cart-checkout">
+          Check Out{' '}
+        </button>
       </Link>
-      <Remove {...products.id} />
     </div>
   );
 }

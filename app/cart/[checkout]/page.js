@@ -1,78 +1,154 @@
 import Link from 'next/link';
+import styles from './page.module.scss';
 
 export default function CheckOutPage() {
   return (
-    <div>
-      <hi>Check Out</hi>
-      <form>
-        <h3>Billing Address</h3>
-        <label htmlFor="fname">
-          <i className="fa fa-user" />
-          Full Name
-        </label>
-        <input id="fname" name="firstName" placeholder="Full Name" />
-        <label htmlFor="email">
-          <i className="fa fa-envelope" /> Email
-        </label>
-        <input id="email" name="email" placeholder="email" />
-        <label htmlFor="adr">
-          <i className="fa fa-address-card-o" /> Address
-        </label>
-        <input id="adr" name="address" placeholder="address" />
-        <label htmlFor="city">
-          <i className="fa fa-institution" />
-          City
-        </label>
-        <input id="city" name="city" placeholder="city" />
-        <div className="row">
-          <div className="col-50">
-            <label htmlFor="state">State</label>
-            <input id="state" name="state" placeholder="state" />
-          </div>
-          <div className="col-50">
-            <label htmlFor="zip">Zip</label>
-            <input id="zip" name="zip" placeholder="zip" />
-          </div>
-        </div>
+    <div className={styles.row}>
+      <div className={styles.col - 75}>
+        <div className={styles.container}>
+          <h1 className={styles.h1}>Check Out</h1>
+          <form>
+            <h3>Billing Address</h3>
+            <label htmlFor="fname">
+              <i className="fa fa-user" />
+              Full Name
+            </label>
+            <input
+              className={styles.input}
+              id="fname"
+              name="firstName"
+              placeholder="Full Name"
+              required
+            />
+            <label htmlFor="email">
+              <i className="fa fa-envelope" /> Email
+            </label>
+            <input
+              className={styles.input}
+              id="email"
+              name="email"
+              placeholder="email"
+              required
+            />
+            <label htmlFor="adr">
+              <i className="fa fa-address-card-o" /> Address
+            </label>
+            <input
+              className={styles.input}
+              id="adr"
+              name="address"
+              placeholder="address"
+              required
+            />
+            <label htmlFor="city">
+              <i className="fa fa-institution" />
+              City
+            </label>
+            <input
+              className={styles.input}
+              id="city"
+              name="city"
+              placeholder="city"
+              required
+            />
+            <div className={styles.col - 50}>
+              <div className="col-50">
+                <label htmlFor="state">State</label>
+                <input
+                  className={styles.input}
+                  id="state"
+                  name="state"
+                  placeholder="state"
+                  required
+                />
+              </div>
+              <div className={styles.col - 50}>
+                <label htmlFor="zip">Zip</label>
+                <input
+                  className={styles.input}
+                  id="zip"
+                  name="zip"
+                  placeholder="zip"
+                  required
+                />
+              </div>
+            </div>
 
-        <div className="col-50">
-          <h3>Payment</h3>
-          <label htmlFor="fname">Accepted Cards</label>
-          <div className="icon-container">
-            <i className="fa fa-cc-visa" />
-            <i className="fa fa-cc-amex" />
-            <i className="fa fa-cc-mastercard" />
-            <i className="fa fa-cc-discover" />
-          </div>
-          <label htmlFor="cname">Name on Card</label>
-          <input id="cname" name="cardname" placeholder="cardname" />
+            <div className={styles.col - 50}>
+              <h3>Payment</h3>
+              <label htmlFor="fname">Accepted Cards</label>
+              <div className="icon-container">
+                <i className="fa fa-cc-visa" />
+                <i className="fa fa-cc-amex" />
+                <i className="fa fa-cc-mastercard" />
+                <i className="fa fa-cc-discover" />
+              </div>
+              <label htmlFor="cname">Name on Card</label>
+              <input
+                className={styles.input}
+                id="cname"
+                name="cardname"
+                placeholder="cardname"
+                required
+              />
+            </div>
+            <label htmlFor="ccnum">Credit card number</label>
+            <input
+              className={styles.input}
+              id="ccnum"
+              name="cardnumber"
+              placeholder="1111-2222-3333-4444"
+              required
+            />
+            <label htmlFor="expmonth">Exp Month</label>
+            <input
+              className={styles.input}
+              id="expmonth"
+              name="expmonth"
+              placeholder="exp month"
+              required
+            />
+            <div className={styles.row}>
+              <div className={styles.col - 50}>
+                <label htmlFor="expyear">Exp Year</label>
+                <input
+                  className={styles.input}
+                  id="expyear"
+                  name="expyear"
+                  placeholder="Exp Year"
+                  required
+                />
+              </div>
+              <div className="col-50">
+                <label htmlFor="cvv">CVV</label>
+                <input
+                  className={styles.input}
+                  id="cvv"
+                  name="cvv"
+                  placeholder="cvv"
+                  required
+                />
+              </div>
+            </div>
+            <label>
+              <input
+                type="checkbox"
+                // checked="checked"
+                name=""
+                required
+              />
+              Shipping address same as billing
+            </label>
+            <Link href="/cart/checkout/thankyou">
+              <input
+                className={styles.input}
+                type="submit"
+                value="Continue to checkout"
+              />
+            </Link>
+          </form>
         </div>
-        <label htmlFor="ccnum">Credit card number</label>
-        <input id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" />
-        <label htmlFor="expmonth">Exp Month</label>
-        <input id="expmonth" name="expmonth" placeholder="exp month" />
-        <div className="row">
-          <div className="col-50">
-            <label htmlFor="expyear">Exp Year</label>
-            <input id="expyear" name="expyear" placeholder="Exp Year" />
-          </div>
-          <div className="col-50">
-            <label htmlFor="cvv">CVV</label>
-            <input id="cvv" name="cvv" placeholder="cvv" />
-          </div>
-        </div>
-        <label>
-          <input
-            type="checkbox"
-            // checked="checked"
-            name=""
-          />{' '}
-          Shipping address same as billing
-        </label>
-        <Link href="/cart/checkout/thankyou">
-          <input type="submit" value="Continue to checkout" className="btn" />
-        </Link>
-      </form>
+      </div>
     </div>
   );
 }
