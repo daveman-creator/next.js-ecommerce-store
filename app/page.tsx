@@ -2,6 +2,17 @@ import Image from 'next/image';
 // import Link from 'next/link';
 import styles from './page.module.scss';
 
+type MetaData = {
+  title: string;
+
+  shortcut: string;
+};
+
+export const metadata: MetaData = {
+  title: 'Home Page',
+  shortcut: '/favicon.ico',
+};
+
 export default function HomePage() {
   return (
     <main className={styles.main}>

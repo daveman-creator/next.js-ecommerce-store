@@ -1,9 +1,19 @@
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
-// products
 import styles from './page.module.scss';
+
+type MetaData = {
+  title: string;
+
+  shortcut: string;
+};
+
+export const metadata: MetaData = {
+  title: 'Products Page',
+  shortcut: '/favicon.ico',
+};
 
 export default async function ProductsPage() {
   const products = await getProducts();
@@ -41,7 +51,7 @@ export default async function ProductsPage() {
   return (
     <>
       <div className="top container">
-        <hi className={styles.h1}>All Products</hi>
+        <h1 className={styles.h1}>All Products</h1>
         <form>
           <select>
             {' '}

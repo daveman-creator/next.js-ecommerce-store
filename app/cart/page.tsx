@@ -5,10 +5,26 @@ import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 import Remove from './Remove';
 
+type MetaData = {
+  title: string;
+
+  shortcut: string;
+};
+
+export const metadata: MetaData = {
+  title: 'Cart Page',
+  shortcut: '/favicon.ico',
+};
+
+type ProductsCookieParsed = {
+  id: number;
+  cart: number;
+}[];
+
 export default async function Cart() {
   const productsCookie = cookies().get('productsCookie');
 
-  let productsCookieParsed = [];
+  let productsCookieParsed: ProductsCookieParsed = [];
 
   if (productsCookie) {
     productsCookieParsed = JSON.parse(productsCookie.value);

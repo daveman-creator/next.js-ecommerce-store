@@ -1,10 +1,20 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
 
+type MetaData = {
+  title: string;
+
+  shortcut: string;
+};
+export const metadata: MetaData = {
+  title: 'CheckOut Page',
+  shortcut: '/favicon.ico',
+};
+
 export default function CheckOutPage() {
   return (
     <div className={styles.row}>
-      <div className={styles.col - 75}>
+      <div className={styles.com}>
         <div className={styles.container}>
           <h1 className={styles.h1}>Check Out</h1>
           <form>
@@ -51,7 +61,7 @@ export default function CheckOutPage() {
               placeholder="city"
               required
             />
-            <div className={styles.col - 50}>
+            <div className={styles.col}>
               <div className="col-50">
                 <label htmlFor="state">State</label>
                 <input
@@ -62,7 +72,7 @@ export default function CheckOutPage() {
                   required
                 />
               </div>
-              <div className={styles.col - 50}>
+              <div className={styles.col}>
                 <label htmlFor="zip">Zip</label>
                 <input
                   className={styles.input}
@@ -74,7 +84,7 @@ export default function CheckOutPage() {
               </div>
             </div>
 
-            <div className={styles.col - 50}>
+            <div className={styles.col}>
               <h3>Payment</h3>
               <label htmlFor="fname">Accepted Cards</label>
               <div className="icon-container">
@@ -109,7 +119,7 @@ export default function CheckOutPage() {
               required
             />
             <div className={styles.row}>
-              <div className={styles.col - 50}>
+              <div className={styles.col}>
                 <label htmlFor="expyear">Exp Year</label>
                 <input
                   className={styles.input}
