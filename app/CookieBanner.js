@@ -19,21 +19,21 @@ export default function CookieBanner() {
     setAreCookiesTermsAccepted(initialState);
   }, []);
 
-  return (
-    !areCookiesTermsAccepted && (
-      <>
-        <div className={styles.div}>
-          This is the cookie police. Please accept terms and conditions
-        </div>
-        <button
-          onClick={() => {
-            setAreCookiesTermsAccepted(true);
-            setLocalStorage('areCookiesTermsAccepted', true);
-          }}
-        >
-          Accept
-        </button>
-      </>
-    )
+  return areCookiesTermsAccepted ? (
+    <div />
+  ) : (
+    <>
+      <div className={styles.div}>
+        This is the cookie police. Please accept terms and conditions
+      </div>
+      <button
+        onClick={() => {
+          setAreCookiesTermsAccepted(true);
+          setLocalStorage('areCookiesTermsAccepted', true);
+        }}
+      >
+        Accept
+      </button>
+    </>
   );
 }

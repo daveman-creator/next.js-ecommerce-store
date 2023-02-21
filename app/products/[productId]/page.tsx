@@ -8,11 +8,16 @@ import { getProduct } from '../../../database/products';
 import Product from './product';
 
 export const dynamic = 'force-dynamic';
+type Props = {
+  params: {
+    productId: string;
+  };
+};
 
-export async function generateMetadata(props) {
-  const singleProduct = await getProduct(props.params.productId);
+export async function generateMetadata(props: Props) {
+  const singleProduct = await getProduct(parseInt(props.params.productId));
   return {
-    title: `Single product page for ${singleProduct.name}
+    title: `Single product page for ${singleProduct?.name}
     `,
     description: '',
     icons: {
@@ -21,12 +26,12 @@ export async function generateMetadata(props) {
   };
 }
 
-export default async function ProductPage(props) {
+export default async function ProductPage(props: Props) {
   // const singleProduct = products.find((product) => {
   //   return product.name.toLocaleLowerCase() === props.params.productName;
   // });
 
-  const singleProduct = await getProduct(props.params.productId);
+  const singleProduct = await getProduct(parseInt(props.params.productId));
 
   if (!singleProduct) {
     notFound();

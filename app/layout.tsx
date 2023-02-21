@@ -5,11 +5,22 @@ import { getProducts } from '../database/products';
 import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
 
-export default async function RootLayout({ children }) {
+export const dynamic = 'force-dynamic';
+
+type Props = {
+  children: React.ReactNode;
+};
+
+type ProductsCookieParsed = {
+  id: number;
+  cart: number;
+}[];
+
+export default async function RootLayout(props: Props) {
   const products = await getProducts();
   const productsCookie = cookies().get('productsCookie');
 
-  let productsCookieParsed = [];
+  let productsCookieParsed: ProductsCookieParsed = [];
 
   if (productsCookie) {
     productsCookieParsed = JSON.parse(productsCookie.value);
@@ -46,7 +57,7 @@ export default async function RootLayout({ children }) {
         <CookieBanner />
         <header className={styles.header}>
           <nav className={styles.navbar}>
-            <hi className={styles.logo}>Dave</hi>
+            <h1 className={styles.logo}>Dave</h1>
             <ul className={styles.links}>
               <li className={styles.navlink}>
                 <Link href="/">Home</Link>
@@ -71,7 +82,7 @@ export default async function RootLayout({ children }) {
           </nav>
         </header>
 
-        {children}
+        {props.children}
         <footer className={styles.footer}>copyright BodyCare 2023</footer>
       </body>
     </html>
