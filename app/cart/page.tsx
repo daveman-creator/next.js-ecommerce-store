@@ -91,7 +91,7 @@ export default async function Cart() {
       <p className={styles.p} data-test-id="cart-total">
         Total: £{subTotal}
       </p>
-      <Link href={`/cart/${Cart.id}`}>
+      <Link href="/cart/checkOut">
         <button className={styles.button} data-test-id="cart-checkout">
           Check Out{' '}
         </button>

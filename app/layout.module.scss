@@ -30,11 +30,12 @@
       font-family: 'Oswald', sans-serif;
       margin-left: 25px;
       text-transform: uppercase;
+      color: rgb(12, 9, 39);
     }
     .links {
       display: flex;
       border-radius: 6px;
-      padding: 15px;
+      padding: 40px;
       flex-wrap: wrap;
     }
     .navlink {
@@ -44,7 +45,7 @@
     }
     .navlink a {
       text-decoration: none;
-      color: black;
+      color: rgb(12, 9, 39);
       font-size: 25px;
     }
     .navlink a:hover {
@@ -61,4 +62,5 @@
   margin-top: 20px;
   padding: 15px;
   border-top: 2px solid var(--main-bg-color);
+  color: rgb(12, 9, 39);
 }
