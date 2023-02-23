@@ -65,15 +65,7 @@ export default async function RootLayout(props: Props) {
               <li className={styles.navlink}>
                 <Link href="/products">Products</Link>
               </li>
-              <li className={styles.navlink}>
-                <Link href="/about us">About Us</Link>
-              </li>
-              <li className={styles.navlink}>
-                <Link href="/contact">Contact</Link>
-              </li>
-              <li className={styles.navlink}>
-                <Link href="/login">login</Link>
-              </li>
+
               <li className={styles.navlink}>
                 {' '}
                 <Link href="/cart"> cart ({subTotal})</Link>

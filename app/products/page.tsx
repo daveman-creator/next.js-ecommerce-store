@@ -65,7 +65,7 @@ export default async function ProductsPage() {
         </form>
       </div>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         {products.map((product) => {
           return (
             <div
@@ -100,7 +100,7 @@ export default async function ProductsPage() {
             </div>
           );
         })}
-      </main>
+      </div>
     </>
   );
 }

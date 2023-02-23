@@ -19,6 +19,7 @@ export default function Product(props) {
   // const singleProduct = await getProduct(props.params.productName);
   const [count, setCount] = useState(1);
   const router = useRouter();
+
   return (
     <main className={styles.main}>
       <Image
