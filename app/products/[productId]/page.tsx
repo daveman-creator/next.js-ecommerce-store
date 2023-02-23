@@ -61,10 +61,9 @@ export default async function ProductPage(props: Props) {
   // console.log('productsWithCart', productsWithCart);
 
   return (
-    <>
+    <div>
       <Product product={singleProduct} />
-      {/* <p>{Product.cart}</p> */}
-    </>
+    </div>
 
     // <div className={styles.div}>
     //   <h1>{props.params.productName}</h1>

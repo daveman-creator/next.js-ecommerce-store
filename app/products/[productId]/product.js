@@ -64,7 +64,7 @@ export default function Product(props) {
             +
           </button>{' '}
           <br />
-          <Link href={`/cart`}>
+          <Link href="/cart">
             <button
               data-test-id="product-add-to-cart"
               className={styles.button2}

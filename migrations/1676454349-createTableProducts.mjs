@@ -6,7 +6,7 @@ export async function up(sql) {
     type varchar(30) NOT NULL,
     description varchar(40),
     long_description varchar(400),
-    price integer
+    price integer NOT NULL
     )
   `;
 }

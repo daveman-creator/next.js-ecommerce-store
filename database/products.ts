@@ -97,11 +97,3 @@ export const getProduct = cache(async (id: number) => {
   `;
   return product;
 });
-
-// export async function getProducts() {
-//   const products = await sql`
-//   SELECT * FROM products
-//   `;
-
-//   return products;
-// }
