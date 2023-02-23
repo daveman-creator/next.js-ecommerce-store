@@ -42,12 +42,8 @@ export default async function ProductsPage() {
   //   if (productInCookie) {
   //     productWithCart.cart = productInCookie.cart;
   //     // console.log(productWithCart.cart);
-  //   }
-  //   return productWithCart;
-  // });
-
-  // console.log('productsWithCart', productsWithCart);
-
+  //
+  console.log(products);
   return (
     <>
       <div className="top container">
