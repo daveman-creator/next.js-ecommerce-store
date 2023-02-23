@@ -26,6 +26,7 @@ export async function generateMetadata(props: Props) {
   };
 }
 
+// console.log(Product);
 export default async function ProductPage(props: Props) {
   // const singleProduct = products.find((product) => {
   //   return product.name.toLocaleLowerCase() === props.params.productName;
